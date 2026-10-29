@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>可信数据空间</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#/overview">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9L12 3Z" stroke="currentColor" stroke-width="1.8"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span>
+          <strong>可信数据空间</strong>
+          <small>TRUSTED DATA SPACE</small>
+        </span>
+      </a>
+
+      <div class="nav-caption">工作台</div>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#/overview" data-route="overview">
+          <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+          <span>安全概览</span>
+        </a>
+        <a href="#/assets" data-route="assets">
+          <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 5.5C5 4.7 5.7 4 6.5 4h7L19 9.5v9c0 .8-.7 1.5-1.5 1.5h-11A1.5 1.5 0 0 1 5 18.5v-13Z" stroke="currentColor" stroke-width="1.7"/><path d="M13 4v6h6M8 13h8M8 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span>数据资产</span>
+        </a>
+        <a href="#/sandbox" data-route="sandbox">
+          <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="m9 10 2 2-2 2M13 15h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>可信沙箱</span>
+        </a>
+        <a href="#/components" data-route="components">
+          <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8.5 8.5 4 13 8.5 8.5 13 4 8.5Zm7 7L15.5 11 20 15.5 15.5 20 11 15.5ZM15.5 4 20 8.5 15.5 13 11 8.5 15.5 4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+          <span>组件中心</span>
+        </a>
+        <a href="#/export" data-route="export">
+          <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v11m0-11 4 4m-4-4L8 8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 14v4.5c0 .8.7 1.5 1.5 1.5h11c.8 0 1.5-.7 1.5-1.5V14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span>出域申请</span>
+        </a>
+        <a href="#/approval" data-route="approval">
+          <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 19 6v5.5c0 4.2-2.7 7.4-7 9.5-4.3-2.1-7-5.3-7-9.5V6l7-3Z" stroke="currentColor" stroke-width="1.7"/><path d="m8.8 11.8 2.1 2.1 4.5-4.7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>审批中心</span>
+        </a>
+        <a href="#/trace" data-route="trace">
+          <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4 4M8.5 11h5M11 8.5v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span>水印溯源</span>
+        </a>
+        <a href="#/audit" data-route="audit">
+          <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M6 4h12v17H6V4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+          <span>审计日志</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-status"><i></i><span>安全策略已生效</span></div>
+        <div class="sidebar-meta" id="sidebar-runtime">LOCAL · RUNTIME 检测中</div>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div>
+          <div class="breadcrumb">可信数据空间 <span>/</span> <strong id="breadcrumb-current">安全概览</strong></div>
+          <h1 id="page-title">安全概览</h1>
+          <p id="page-subtitle">统一查看数据流转、出域风险与安全策略运行状态</p>
+        </div>
+        <div class="topbar-actions">
+          <span class="env-pill api-pending" id="api-status" title="等待首个 API 请求"><i></i><span id="api-status-text">API 连接中</span></span>
+          <span class="operator"><span class="avatar">A</span><span><strong>alice</strong><small>安全管理员</small></span></span>
+        </div>
+      </header>
+
+      <main id="page-content" class="page-content" aria-live="polite"></main>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="drawer-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="assertive"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
+
